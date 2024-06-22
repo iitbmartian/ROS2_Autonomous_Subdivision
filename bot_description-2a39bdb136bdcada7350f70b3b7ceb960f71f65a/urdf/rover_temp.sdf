@@ -1,0 +1,1477 @@
+<sdf version='1.7'>
+  <model name='rover'>
+    <link name='root_link'>
+      <inertial>
+        <pose>-0.006157 0.002358 0.137421 0 -0 0</pose>
+        <mass>2.92933</mass>
+        <inertia>
+          <ixx>0.0497222</ixx>
+          <ixy>0.00377525</ixy>
+          <ixz>0.00463585</ixz>
+          <iyy>0.0687659</iyy>
+          <iyz>-0.00225128</iyz>
+          <izz>0.0790249</izz>
+        </inertia>
+      </inertial>
+      <collision name='root_link_fixed_joint_lump__base_link_collision'>
+        <pose>0.276422 -0.526119 -0.21368 0 -0 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='root_link_fixed_joint_lump__camera_link_collision_1'>
+        <pose>0.340641 -0 0.19 0 0 -0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.005</length>
+            <radius>0.005</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='root_link_fixed_joint_lump__connector-link-1_collision_2'>
+        <pose>-0.294328 0.050001 0.17041 1.5708 0 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/connector-link-1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='root_link_fixed_joint_lump__connector-link-2_collision_3'>
+        <pose>-0.294328 -0.049999 0.17041 1.5708 0 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/connector-link-2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='root_link_fixed_joint_lump__imu_link_collision_4'>
+        <pose>0 0 0.1 0 -0 3.14159</pose>
+        <geometry>
+          <cylinder>
+            <length>0.05</length>
+            <radius>0.05</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='root_link_fixed_joint_lump__sensor_laser_collision_5'>
+        <pose>0 0 0.2 0 0 -0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.05</length>
+            <radius>0.05</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='root_link_fixed_joint_lump__base_link_visual'>
+        <pose>0.276422 -0.526119 -0.21368 0 -0 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Trunk</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='root_link_fixed_joint_lump__camera_link_visual_1'>
+        <pose>0.340641 -0 0.19 0 0 -0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.005</length>
+            <radius>0.005</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name='root_link_fixed_joint_lump__connector-link-1_visual_2'>
+        <pose>-0.294328 0.050001 0.17041 1.5708 0 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/connector-link-1.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='root_link_fixed_joint_lump__connector-link-2_visual_3'>
+        <pose>-0.294328 -0.049999 0.17041 1.5708 0 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/connector-link-2.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='root_link_fixed_joint_lump__imu_link_visual_4'>
+        <pose>0 0 0.1 0 -0 3.14159</pose>
+        <geometry>
+          <cylinder>
+            <length>0.005</length>
+            <radius>0.005</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name='root_link_fixed_joint_lump__sensor_laser_visual_5'>
+        <pose>0 0 0.2 0 0 -0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.05</length>
+            <radius>0.05</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+      <sensor name='camera1' type='depth'>
+        <update_rate>15</update_rate>
+        <camera name='head'>
+          <horizontal_fov>1.39626</horizontal_fov>
+          <image>
+            <width>800</width>
+            <height>800</height>
+            <format>B8G8R8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>300</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+        </camera>
+        <plugin name='camera_plugin' filename='libgazebo_ros_openni_kinect.so'>
+          <baseline>0.2</baseline>
+          <alwaysOn>1</alwaysOn>
+          <updateRate>0.0</updateRate>
+          <cameraName>mrt/camera</cameraName>
+          <imageTopicName>color/image_raw</imageTopicName>
+          <cameraInfoTopicName>color/camera_info</cameraInfoTopicName>
+          <depthImageTopicName>depth/image_rect_raw</depthImageTopicName>
+          <depthImageCameraInfoTopicName>depth/camera_info</depthImageCameraInfoTopicName>
+          <pointCloudTopicName>depth/points</pointCloudTopicName>
+          <frameName>camera_link_optical</frameName>
+          <pointCloudCutoff>0.5</pointCloudCutoff>
+          <pointCloudCutoffMax>7.0</pointCloudCutoffMax>
+          <distortionK1>0</distortionK1>
+          <distortionK2>0</distortionK2>
+          <distortionK3>0</distortionK3>
+          <distortionT1>0</distortionT1>
+          <distortionT2>0</distortionT2>
+          <CxPrime>0</CxPrime>
+          <Cx>0</Cx>
+          <Cy>0</Cy>
+          <focalLength>0</focalLength>
+        </plugin>
+        <pose>0.340641 -0 0.19 0 -0 -0</pose>
+      </sensor>
+      <gravity>1</gravity>
+      <sensor name='imu_sensor' type='imu'>
+        <always_on>1</always_on>
+        <update_rate>100</update_rate>
+        <visualize>1</visualize>
+        <topic>__default_topic__</topic>
+        <plugin name='imu_plugin' filename='libgazebo_ros_imu_sensor.so'>
+          <topicName>imu</topicName>
+          <bodyName>imu_link</bodyName>
+          <updateRateHZ>10.0</updateRateHZ>
+          <gaussianNoise>0.0</gaussianNoise>
+          <xyzOffset>0 0 0</xyzOffset>
+          <rpyOffset>0 0 0</rpyOffset>
+          <frameName>imu_link</frameName>
+          <initialOrientationAsReference>0</initialOrientationAsReference>
+        </plugin>
+        <pose>0 0 0.1 0 -0 3.14159</pose>
+      </sensor>
+      <sensor name='head_hokuyo_sensor' type='ray'>
+        <visualize>0</visualize>
+        <update_rate>10</update_rate>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>720</samples>
+              <resolution>1</resolution>
+              <min_angle>-3</min_angle>
+              <max_angle>3</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.2</min>
+            <max>10</max>
+            <resolution>0.01</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </ray>
+        <plugin name='gazebo_ros_head_hokuyo_controller' filename='libgazebo_ros_laser.so'>
+          <topicName>/mrt/laser/scan</topicName>
+          <frameName>sensor_laser</frameName>
+        </plugin>
+        <pose>0 0 0.2 0 -0 -0</pose>
+      </sensor>
+    </link>
+    <joint name='s-joint-left' type='revolute'>
+      <pose relative_to='root_link'>-0.332328 0.050001 0.17041 1.5708 0.0195 1.5708</pose>
+      <parent>root_link</parent>
+      <child>triangle-left</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1</lower>
+          <upper>1</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='triangle-left'>
+      <pose relative_to='s-joint-left'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.098234 -0.029161 -0.006312 0 -0 0</pose>
+        <mass>0.175958</mass>
+        <inertia>
+          <ixx>0.000105304</ixx>
+          <ixy>-0.00015491</ixy>
+          <ixz>2.45636e-05</ixz>
+          <iyy>0.000620711</iyy>
+          <iyz>6.55761e-06</iyz>
+          <izz>0.000716739</izz>
+        </inertia>
+      </inertial>
+      <collision name='triangle-left_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/triangle-left.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='triangle-left_fixed_joint_lump__triangle-ball-left_collision_1'>
+        <pose>0.21 0 -0.0256 -1.5708 -0 -0.11925</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/triangle-ball-left.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='triangle-left_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/triangle-left.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='triangle-left_fixed_joint_lump__triangle-ball-left_visual_1'>
+        <pose>0.21 0 -0.0256 -1.5708 -0 -0.11925</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/triangle-ball-left.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name='socket-left'>
+      <pose relative_to='ball-socket-left'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.148999 0.000368 -0.000245 0 -0 0</pose>
+        <mass>0.0803231</mass>
+        <inertia>
+          <ixx>2.49051e-06</ixx>
+          <ixy>1.95775e-06</ixy>
+          <ixz>2.93537e-06</ixz>
+          <iyy>0.0013294</iyy>
+          <iyz>-5.14465e-08</iyz>
+          <izz>0.00132935</izz>
+        </inertia>
+      </inertial>
+      <collision name='socket-left_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/socket-left.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='socket-left_fixed_joint_lump__left-rod_collision_1'>
+        <pose>0 0 0 0 1.5252 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/left-rod.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='socket-left-down_collision_2'>
+        <pose>0.26698 0.003817 -0.009243 -1.96229 -4e-06 -3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/socket-left-down.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='socket-left_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/socket-left.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='socket-left_fixed_joint_lump__left-rod_visual_1'>
+        <pose>0 0 0 0 1.5252 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/left-rod.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='socket-left-down_visual_2'>
+        <pose>0.26698 0.003817 -0.009243 -1.96229 -4e-06 -3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/socket-left-down.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='s-joint-left-down' type='revolute'>
+      <pose relative_to='triangle-left'>0 -0.1116 -0.01 -3.14159 -0 -3.1221</pose>
+      <parent>triangle-left</parent>
+      <child>triangle-connector</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1</lower>
+          <upper>1</upper>
+          <effort>30</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='triangle-connector'>
+      <pose relative_to='s-joint-left-down'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.05 0 0.005166 0 -0 0</pose>
+        <mass>0.0443641</mass>
+        <inertia>
+          <ixx>2.39706e-06</ixx>
+          <ixy>1.03922e-19</ixy>
+          <ixz>-5.95433e-21</ixz>
+          <iyy>6.71952e-05</iyy>
+          <iyz>-7.31245e-23</iyz>
+          <izz>6.88258e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='triangle-connector_collision'>
+        <pose>0.05 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/triangle-connector-l.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='triangle-connector_visual'>
+        <pose>0.05 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/triangle-connector-l.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='s-joint-right' type='revolute'>
+      <pose relative_to='root_link'>-0.332328 -0.049999 0.17041 1.5708 -0.0195 -1.5708</pose>
+      <parent>root_link</parent>
+      <child>triangle-right</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1</lower>
+          <upper>1</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='triangle-right'>
+      <pose relative_to='s-joint-right'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.322392 -0.300092 -0.289232 0 -0 0</pose>
+        <mass>0.174826</mass>
+        <inertia>
+          <ixx>0.0052041</ixx>
+          <ixy>0.000746314</ixy>
+          <ixz>0.000935309</ixz>
+          <iyy>0.00361499</iyy>
+          <iyz>-0.00249598</iyz>
+          <izz>0.00376126</izz>
+        </inertia>
+      </inertial>
+      <collision name='triangle-right_collision'>
+        <pose>0.34 -0.347105 -0.336803 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/triangle-right.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='triangle-right_fixed_joint_lump__triangle-ball-right_collision_1'>
+        <pose>0.21 0 0.0256 1.5708 0 -0.056761</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/triangle-ball-right.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='triangle-right_visual'>
+        <pose>0.34 -0.347105 -0.336803 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/triangle-right.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='triangle-right_fixed_joint_lump__triangle-ball-right_visual_1'>
+        <pose>0.21 0 0.0256 1.5708 0 -0.056761</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/triangle-ball-right.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name='socket-right'>
+      <pose relative_to='ball-socket-right'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.148999 0.000268 0.000266 0 -0 0</pose>
+        <mass>0.080323</mass>
+        <inertia>
+          <ixx>2.49475e-06</ixx>
+          <ixy>3.15166e-06</ixy>
+          <ixz>-3.17568e-06</ixz>
+          <iyy>0.00132937</iyy>
+          <iyz>6.47806e-09</iyz>
+          <izz>0.00132937</izz>
+        </inertia>
+      </inertial>
+      <collision name='socket-right_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/socket-right.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='socket-right_fixed_joint_lump__right-rod_collision_1'>
+        <pose>0.004428 0 0 0 0.46215 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/right-rod.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='socket-right-down_collision_2'>
+        <pose>0.268057 6.3e-05 0.01 1.57705 -2e-06 -3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/socket-right-down.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='socket-right_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/socket-right.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='socket-right_fixed_joint_lump__right-rod_visual_1'>
+        <pose>0.004428 0 0 0 0.46215 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/right-rod.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='socket-right-down_visual_2'>
+        <pose>0.268057 6.3e-05 0.01 1.57705 -2e-06 -3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/socket-right-down.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint1' type='revolute'>
+      <pose relative_to='root_link'>-0.020328 0.263001 0.12041 1.5708 -0.06648 3.14159</pose>
+      <parent>root_link</parent>
+      <child>Left_rocker</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='Left_rocker'>
+      <pose relative_to='joint1'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.172011 -0.185183 0.043542 0 -0 0</pose>
+        <mass>0.750552</mass>
+        <inertia>
+          <ixx>0.00264473</ixx>
+          <ixy>0.00201361</ixy>
+          <ixz>0.000163895</ixz>
+          <iyy>0.00380381</iyy>
+          <iyz>-0.000101218</iyz>
+          <izz>0.00496601</izz>
+        </inertia>
+      </inertial>
+      <collision name='Left_rocker_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/Left_rocker.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='Left_rocker_fixed_joint_lump__ball-left-down_collision_1'>
+        <pose>0.31476 -0.27334 -0.0146 -1.5708 -0 -2.9303</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/ball-left-down.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='Left_rocker_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/Left_rocker.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='Left_rocker_fixed_joint_lump__ball-left-down_visual_1'>
+        <pose>0.31476 -0.27334 -0.0146 -1.5708 -0 -2.9303</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/ball-left-down.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+    <joint name='joint3' type='revolute'>
+      <pose relative_to='Left_rocker'>-0.23989 -0.077168 0.002 0 0 -0.11742</pose>
+      <parent>Left_rocker</parent>
+      <child>Left_bogie</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1</lower>
+          <upper>0.7</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='Left_bogie'>
+      <pose relative_to='joint3'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.019103 -0.151328 0.062416 0 -0 0</pose>
+        <mass>0.774727</mass>
+        <inertia>
+          <ixx>0.00197113</ixx>
+          <ixy>7.13583e-07</ixy>
+          <ixz>2.77626e-12</ixz>
+          <iyy>0.0019848</iyy>
+          <iyz>-1.49311e-13</iyz>
+          <izz>0.00141941</izz>
+        </inertia>
+      </inertial>
+      <collision name='Left_bogie_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/Left_bogie.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='Left_bogie_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/Left_bogie.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+    <joint name='wheel_joint_5' type='revolute'>
+      <pose relative_to='Left_bogie'>0.192 -0.195 0.041136 3.0602 -0.72361 -2.6667</pose>
+      <parent>Left_bogie</parent>
+      <child>wheel_5</child>
+      <axis>
+        <xyz>0.6621 0.060914 -0.74694</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel_5'>
+      <pose relative_to='wheel_joint_5'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.132316 0.03208 -0.12773 0 -0 0</pose>
+        <mass>1.56933</mass>
+        <inertia>
+          <ixx>0.0103344</ixx>
+          <ixy>0.000206987</ixy>
+          <ixz>-0.00254066</ixz>
+          <iyy>0.00810064</iyy>
+          <iyz>-0.000233344</iyz>
+          <izz>0.0109493</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel_5_collision'>
+        <pose>-0.01 -0.025 -0.01 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/wheel_5.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel_5_visual'>
+        <pose>-0.01 -0.025 -0.01 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/wheel_5.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Trunk</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+    <joint name='wheel_joint_6' type='revolute'>
+      <pose relative_to='Left_bogie'>-0.23514 -0.17514 0.041136 3.0602 -0.72361 -2.6667</pose>
+      <parent>Left_bogie</parent>
+      <child>wheel_6</child>
+      <axis>
+        <xyz>0.6621 0.060914 -0.74694</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel_6'>
+      <pose relative_to='wheel_joint_6'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.123984 0.052878 -0.133419 0 -0 0</pose>
+        <mass>1.56933</mass>
+        <inertia>
+          <ixx>0.0103344</ixx>
+          <ixy>0.000206987</ixy>
+          <ixz>-0.00254066</ixz>
+          <iyy>0.00810064</iyy>
+          <iyz>-0.000233344</iyz>
+          <izz>0.0109493</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel_6_collision'>
+        <pose>-0.01 -0.025 -0.01 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/wheel_5.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel_6_visual'>
+        <pose>-0.01 -0.025 -0.01 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/wheel_5.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Trunk</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+    <joint name='wheel_joint_4' type='revolute'>
+      <pose relative_to='Left_rocker'>0.4071 -0.34158 0.043136 3.0602 -0.72361 -1.2268</pose>
+      <parent>Left_rocker</parent>
+      <child>wheel_4</child>
+      <axis>
+        <xyz>0.6621 0.060914 -0.74694</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel_4'>
+      <pose relative_to='wheel_joint_4'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.144439 0.055848 -0.115046 0 -0 0</pose>
+        <mass>1.56933</mass>
+        <inertia>
+          <ixx>0.0103341</ixx>
+          <ixy>0.000206733</ixy>
+          <ixz>-0.00254073</ixz>
+          <iyy>0.00810089</iyy>
+          <iyz>-0.000233942</iyz>
+          <izz>0.0109494</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel_4_collision'>
+        <pose>-0.03 -0.035 -0.02 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/wheel_4.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel_4_visual'>
+        <pose>-0.03 -0.035 -0.02 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/wheel_4.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Trunk</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+    <joint name='joint2' type='revolute'>
+      <pose relative_to='root_link'>-0.020328 -0.447 0.12041 1.5708 0 3.14159</pose>
+      <parent>root_link</parent>
+      <child>Right_rocker</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='Right_rocker'>
+      <pose relative_to='joint2'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.188093 -0.168825 0.140458 0 -0 0</pose>
+        <mass>0.750552</mass>
+        <inertia>
+          <ixx>0.00229063</ixx>
+          <ixy>0.00187587</ixy>
+          <ixz>-0.000172401</ixz>
+          <iyy>0.00415794</iyy>
+          <iyz>8.59452e-05</iyz>
+          <izz>0.00496605</izz>
+        </inertia>
+      </inertial>
+      <collision name='Right_rocker_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/Right_rocker.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='Right_rocker_fixed_joint_lump__ball-right-down_collision_1'>
+        <pose>0.33825 -0.24368 0.1986 1.5708 -0 -2.7598</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/ball-right-down.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='Right_rocker_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/Right_rocker.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='Right_rocker_fixed_joint_lump__ball-right-down_visual_1'>
+        <pose>0.33825 -0.24368 0.1986 1.5708 -0 -2.7598</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/ball-right-down.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+    <joint name='joint4' type='revolute'>
+      <pose relative_to='Right_rocker'>-0.23989 -0.077168 0 0 -0 0</pose>
+      <parent>Right_rocker</parent>
+      <child>Right_bogie</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1</lower>
+          <upper>0.7</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='Right_bogie'>
+      <pose relative_to='joint4'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-5.8e-05 -0.172764 0.119584 0 -0 0</pose>
+        <mass>0.774727</mass>
+        <inertia>
+          <ixx>0.00197109</ixx>
+          <ixy>-9.83621e-08</ixy>
+          <ixz>2.78024e-12</ixz>
+          <iyy>0.00198484</iyy>
+          <iyz>1.50953e-14</iyz>
+          <izz>0.00141941</izz>
+        </inertia>
+      </inertial>
+      <collision name='Right_bogie_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/Right_bogie.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='Right_bogie_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/Right_bogie.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+    <joint name='wheel_joint_2' type='revolute'>
+      <pose relative_to='Right_bogie'>0.21514 -0.21514 0 -0.081372 0.72361 -0.030811</pose>
+      <parent>Right_bogie</parent>
+      <child>wheel_2</child>
+      <axis>
+        <xyz>-0.6621 -0.060914 0.74694</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel_2'>
+      <pose relative_to='wheel_joint_2'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.029232 0.007113 -0.032552 0 -0 0</pose>
+        <mass>1.56933</mass>
+        <inertia>
+          <ixx>0.0103344</ixx>
+          <ixy>0.000206987</ixy>
+          <ixz>-0.00254066</ixz>
+          <iyy>0.00810064</iyy>
+          <iyz>-0.000233344</iyz>
+          <izz>0.0109493</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel_2_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/wheel_2.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel_2_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/wheel_2.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Trunk</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+    <joint name='wheel_joint_3' type='revolute'>
+      <pose relative_to='Right_bogie'>-0.21514 -0.21514 0 -0.081372 0.72361 -0.030811</pose>
+      <parent>Right_bogie</parent>
+      <child>wheel_3</child>
+      <axis>
+        <xyz>-0.6621 -0.060914 0.74694</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel_3'>
+      <pose relative_to='wheel_joint_3'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.029267 0.004792 -0.032711 0 -0 0</pose>
+        <mass>1.56933</mass>
+        <inertia>
+          <ixx>0.0103345</ixx>
+          <ixy>0.000207212</ixy>
+          <ixz>-0.00254097</ixz>
+          <iyy>0.00810115</iyy>
+          <iyz>-0.000232962</iyz>
+          <izz>0.0109487</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel_3_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/wheel_3.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel_3_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/wheel_3.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Trunk</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+    <joint name='wheel_joint_1' type='revolute'>
+      <pose relative_to='Right_rocker'>0.43071 -0.30158 0 -0.081372 0.72361 -0.030811</pose>
+      <parent>Right_rocker</parent>
+      <child>wheel_1</child>
+      <axis>
+        <xyz>-0.6621 -0.060914 0.74694</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel_1'>
+      <pose relative_to='wheel_joint_1'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.026292 -0.002922 -0.035977 0 -0 0</pose>
+        <mass>1.56933</mass>
+        <inertia>
+          <ixx>0.0103344</ixx>
+          <ixy>0.000206987</ixy>
+          <ixz>-0.00254066</ixz>
+          <iyy>0.00810064</iyy>
+          <iyz>-0.000233344</iyz>
+          <izz>0.0109493</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel_1_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/wheel_1.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel_1_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bot_description/meshes/wheel_1.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Trunk</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+    <plugin name='skid_steer_drive_controller' filename='libgazebo_ros_skid_steer_drive.so'>
+      <updateRate>10.0</updateRate>
+      <robotNamespace>/</robotNamespace>
+      <leftFrontJoint>wheel_joint_4</leftFrontJoint>
+      <rightFrontJoint>wheel_joint_1</rightFrontJoint>
+      <leftRearJoint>wheel_joint_6</leftRearJoint>
+      <rightRearJoint>wheel_joint_3</rightRearJoint>
+      <wheelSeparation>0.43</wheelSeparation>
+      <wheelDiameter>0.215</wheelDiameter>
+      <robotBaseFrame>root_link</robotBaseFrame>
+      <torque>20</torque>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <broadcastTF>1</broadcastTF>
+    </plugin>
+    <plugin name='gps_controller' filename='libhector_gazebo_ros_gps.so'>
+      <alwaysOn>1</alwaysOn>
+      <updateRate>1.0</updateRate>
+      <topicName>fix</topicName>
+      <velocityTopicName>fix_velocity</velocityTopicName>
+      <drift>0.0 0.0 0.0</drift>
+      <gaussianNoise>0.0001 0.0001 0.0001</gaussianNoise>
+      <velocityDrift>0 0 0</velocityDrift>
+      <velocityGaussianNoise>0.0 0.0 0.0</velocityGaussianNoise>
+      <bodyName>root_link</bodyName>
+      <xyzOffset>0.276422 -0.526119 -0.21368</xyzOffset>
+      <rpyOffset>0 -0 3.14159</rpyOffset>
+      <!-- <ignition::corrected_offsets>1</ignition::corrected_offsets> -->
+    </plugin>
+    <joint name='ball-socket-left' type='ball'>
+      <child>socket-left</child>
+      <pose>0 0 0 -0.89006 1.4692 -0.17888</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-3</lower>
+          <upper>3</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <axis2>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1</lower>
+          <upper>1</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis2>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+      <parent>triangle-left</parent>
+    </joint>
+    <joint name='s-joint-7l' type='universal'>
+      <pose>0.3162 -0.2719 -0.017 0 -0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3</lower>
+          <upper>3</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+      <axis2>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1</lower>
+          <upper>1</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis2>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+      <parent>socket-left</parent>
+      <child>Left_rocker</child>
+    </joint>
+    <joint name='s-joint-right-down' type='revolute'>
+      <parent>triangle-right</parent>
+      <child>triangle-connector</child>
+      <pose>0.1 0 0.01 -3.14159 -0 -3.1221</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-30</lower>
+          <upper>30</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <joint name='ball-socket-right' type='ball'>
+      <child>socket-right</child>
+      <pose>0 0 0 -2.1439 -1.5681 2.1943</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-3</lower>
+          <upper>3</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1</lower>
+          <upper>1</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis2>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+      <parent>triangle-right</parent>
+    </joint>
+    <static>0</static>
+    <joint name='s-joint-7r' type='universal'>
+      <pose>0.337 -0.2425 0.2 0 -0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3</lower>
+          <upper>3</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+      <axis2>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1</lower>
+          <upper>1</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis2>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+      <parent>socket-right</parent>
+      <child>Right_rocker</child>
+    </joint>
+  </model>
+</sdf>
