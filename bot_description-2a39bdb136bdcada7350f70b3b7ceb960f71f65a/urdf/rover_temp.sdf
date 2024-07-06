@@ -1,3 +1,5 @@
+//Changed snake casing for camera_plugin on line 184, for imu plugin on line 215 and for gazebo_ros_head_hokuyo_controller on line 250. Not sure about a couple of tag names in imu plugins. Please check out. I did the snake casing for skid steer driver controller on line 1264 and for gps controller on line 1280
+
 <sdf version='1.7'>
   <model name='rover'>
     <link name='root_link'>
@@ -180,27 +182,27 @@
           </noise>
         </camera>
         <plugin name='camera_plugin' filename='libgazebo_ros_openni_kinect.so'>
-          <baseline>0.2</baseline>
-          <alwaysOn>1</alwaysOn>
-          <updateRate>0.0</updateRate>
-          <cameraName>mrt/camera</cameraName>
-          <imageTopicName>color/image_raw</imageTopicName>
-          <cameraInfoTopicName>color/camera_info</cameraInfoTopicName>
-          <depthImageTopicName>depth/image_rect_raw</depthImageTopicName>
-          <depthImageCameraInfoTopicName>depth/camera_info</depthImageCameraInfoTopicName>
-          <pointCloudTopicName>depth/points</pointCloudTopicName>
-          <frameName>camera_link_optical</frameName>
-          <pointCloudCutoff>0.5</pointCloudCutoff>
-          <pointCloudCutoffMax>7.0</pointCloudCutoffMax>
-          <distortionK1>0</distortionK1>
-          <distortionK2>0</distortionK2>
-          <distortionK3>0</distortionK3>
-          <distortionT1>0</distortionT1>
-          <distortionT2>0</distortionT2>
-          <CxPrime>0</CxPrime>
-          <Cx>0</Cx>
-          <Cy>0</Cy>
-          <focalLength>0</focalLength>
+          <base_line>0.2</base_line>
+          <always_on>1</always_on>
+          <update_rate>0.0</update_rate>
+          <camera_name>mrt/camera</camera_name>
+          <image_topic_name>color/image_raw</image_topic_name>
+          <camera_info_topic_name>color/camera_info</camera_info_topic_name>
+          <depth_image_topic_name>depth/image_rect_raw</depth_image_topic_name>
+          <depth_image_camera_info_topic_name>depth/camera_info</depth_image_camera_info_topic_name>
+          <point_cloud_topic_name>depth/points</point_cloud_topic_name>
+          <frame_name>camera_link_optical</frame_name>
+          <point_cloud_cutoff>0.5</point_cloud_cutoff>
+          <point_cloud_cutoff_max>7.0</point_cloud_cutoff_max>
+          <distortion_k1>0</distortion_k1>
+          <distortion_k2>0</distortion_k2>
+          <distortion_k3>0</distortion_k3>
+          <distortion_t1>0</distortion_t1>
+          <distortion_t2>0</distortion_t2>
+          <cx_prime>0</cx_prime>
+          <cx>0</cx>
+          <cy>0</cy>
+          <focal_length>0</focal_length>
         </plugin>
         <pose>0.340641 -0 0.19 0 -0 -0</pose>
       </sensor>
@@ -211,14 +213,14 @@
         <visualize>1</visualize>
         <topic>__default_topic__</topic>
         <plugin name='imu_plugin' filename='libgazebo_ros_imu_sensor.so'>
-          <topicName>imu</topicName>
-          <bodyName>imu_link</bodyName>
-          <updateRateHZ>10.0</updateRateHZ>
-          <gaussianNoise>0.0</gaussianNoise>
-          <xyzOffset>0 0 0</xyzOffset>
-          <rpyOffset>0 0 0</rpyOffset>
-          <frameName>imu_link</frameName>
-          <initialOrientationAsReference>0</initialOrientationAsReference>
+          <topic_name>imu</topic_name>
+          <body_name>imu_link</body_name>
+          <update_rate_HZ>10.0</update_rate_HZ>
+          <gaussian_noise>0.0</gaussian_noise>
+          <xyz>0 0 0</xyz>
+          <rpy>0 0 0</rpy>
+          <frame_name>imu_link</frame_name>
+          <initial_orientation_as_reference>0</initial_orientation_as_reference>
         </plugin>
         <pose>0 0 0.1 0 -0 3.14159</pose>
       </sensor>
@@ -245,9 +247,9 @@
             <stddev>0.01</stddev>
           </noise>
         </ray>
-        <plugin name='gazebo_ros_head_hokuyo_controller' filename='libgazebo_ros_laser.so'>
-          <topicName>/mrt/laser/scan</topicName>
-          <frameName>sensor_laser</frameName>
+        <plugin name='gazebo_ros_head_hokuyo_controller' filename='libgazebo_ros_ray_laser.so'>
+          <topic_name>/mrt/laser/scan</topic_name>
+          <frame_name>sensor_laser</frame_name>
         </plugin>
         <pose>0 0 0.2 0 -0 -0</pose>
       </sensor>
@@ -1260,33 +1262,33 @@
       <self_collide>1</self_collide>
     </link>
     <plugin name='skid_steer_drive_controller' filename='libgazebo_ros_skid_steer_drive.so'>
-      <updateRate>10.0</updateRate>
-      <robotNamespace>/</robotNamespace>
-      <leftFrontJoint>wheel_joint_4</leftFrontJoint>
-      <rightFrontJoint>wheel_joint_1</rightFrontJoint>
-      <leftRearJoint>wheel_joint_6</leftRearJoint>
-      <rightRearJoint>wheel_joint_3</rightRearJoint>
-      <wheelSeparation>0.43</wheelSeparation>
-      <wheelDiameter>0.215</wheelDiameter>
-      <robotBaseFrame>root_link</robotBaseFrame>
+      <update_rate>10.0</update_rate>
+      <robot_namespace>/</robot_namespace>
+      <left_front_joint>wheel_joint_4</left_front_joint>
+      <right_front_joint>wheel_joint_1</right_front_joint>
+      <left_rear_joint>wheel_joint_6</left_rear_joint>
+      <right_rear_joint>wheel_joint_3</right_rear_joint>
+      <wheel_separation>0.43</wheel_separation>
+      <wheel_diameter>0.215</wheel_diameter>
+      <robot_base_frame>root_link</robot_base_frame>
       <torque>20</torque>
-      <commandTopic>cmd_vel</commandTopic>
-      <odometryTopic>odom</odometryTopic>
-      <odometryFrame>odom</odometryFrame>
-      <broadcastTF>1</broadcastTF>
+      <command_topic>cmd_vel</command_topic>
+      <odometry_topic>odom</odometry_topic>
+      <odometry_frame>odom</odometry_frame>
+      <broadcast_tf>1</broadcast_tf>
     </plugin>
     <plugin name='gps_controller' filename='libhector_gazebo_ros_gps.so'>
-      <alwaysOn>1</alwaysOn>
-      <updateRate>1.0</updateRate>
-      <topicName>fix</topicName>
-      <velocityTopicName>fix_velocity</velocityTopicName>
+      <always_on>1</always_on>
+      <update_rate>1.0</update_rate>
+      <topic_name>fix</topic_name>
+      <velocity_topic_name>fix_velocity</velocity_topic_name>
       <drift>0.0 0.0 0.0</drift>
-      <gaussianNoise>0.0001 0.0001 0.0001</gaussianNoise>
-      <velocityDrift>0 0 0</velocityDrift>
-      <velocityGaussianNoise>0.0 0.0 0.0</velocityGaussianNoise>
-      <bodyName>root_link</bodyName>
-      <xyzOffset>0.276422 -0.526119 -0.21368</xyzOffset>
-      <rpyOffset>0 -0 3.14159</rpyOffset>
+      <gaussian_noise>0.0001 0.0001 0.0001</gaussian_noise>
+      <velocity_drift>0 0 0</velocity_drift>
+      <velocity_gaussian_noise>0.0 0.0 0.0</velocity_gaussian_noise>
+      <body_name>root_link</body_name>
+      <xyz>0.276422 -0.526119 -0.21368</xyz>
+      <rpy>0 -0 3.14159</rpy>
       <!-- <ignition::corrected_offsets>1</ignition::corrected_offsets> -->
     </plugin>
     <joint name='ball-socket-left' type='ball'>
