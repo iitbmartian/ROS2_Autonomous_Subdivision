@@ -1,20 +1,20 @@
-import os
-from ament_index_python import get_package_share_directory
-from ament_index_python import get_package_share_directory
+import launch
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, SetEnvironmentVariable
 from launch.substitutions import LaunchConfiguration
 from launch.conditions import IfCondition
 from launch_ros.actions import Node
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-
+import os
+from ament_index_python import get_package_share_directory
+from ament_index_python import get_package_share_directory
 import xacro
 
 
 def generate_launch_description():
 
     robot_description = xacro.process_file(os.path.join(get_package_share_directory('rover_description'), 'urdf/rover.urdf')).toxml()
-    camera_description = xacro.process_file(os.path.join(get_package_share_directory('rover_description'), 'urdf/camera.urdf')).toxml()
+    # camera_description = xacro.process_file(os.path.join(get_package_share_directory('rover_description'), 'urdf/camera.urdf')).toxml()
 
     return LaunchDescription([
 

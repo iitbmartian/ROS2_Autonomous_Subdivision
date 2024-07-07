@@ -1,4 +1,3 @@
-// Here also only on line 4, the link has been updated by just removing www from http://www.ros.org/wiki/xacro
 <?xml version="1.0" encoding="utf-8"?>
 
 <robot name= 'camera' xmlns:xacro="http://www.ros.org/wiki/xacro">
