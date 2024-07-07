@@ -1,3 +1,8 @@
+## Getting Started
+```console
+mkdir -p mrt_ws/src && cd mrt_ws/src
+git clone git@github.com:iitbmartian/ROS2_Autonomous_Subdivision.git .
+```
 ## Packages
 - `rover_description`: URDF descriptions + models for the rover
 ## Guidelines
