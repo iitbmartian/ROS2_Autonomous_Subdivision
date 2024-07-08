@@ -1,4 +1,3 @@
-// Snake case conversion for self_collide for all components. Then plugin for skid_steer_drive the snake casing. Changed filename as well as snake casing for head_hokuyo_controller. The snake casing for gazebo_ros_control, camera_plugin, imu_sensor and gps_controller
 <?xml version="1.0" ?>
 
 <robot>

@@ -1,4 +1,3 @@
-// Here also for camera plugins, I changed the camel case into snake case(underscores) lines 45 - 67
 <?xml version="1.0" ?> 
 
 <robot>

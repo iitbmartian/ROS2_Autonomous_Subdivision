@@ -1,6 +1,4 @@
-// No changes were made
 <?xml version="1.0" ?>
-
 <robot>
   <material name="black">
     <color rgba="0.0 0.0 0.0 1.0"/>

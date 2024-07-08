@@ -1,10 +1,10 @@
 <?xml version="1.0" ?>
-
+<!-- working fle -->
 <robot name="savvyage" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
-  <xacro:include filename="$(find bot_description)/urdf/materials.xacro" />
-  <xacro:include filename="$(find bot_description)/urdf/bot.gazebo" />
-  <xacro:include filename="$(find bot_description)/urdf/macros.xacro" />
+  <xacro:include filename="$(find rover_description)/urdf/materials.xacro" />
+  <xacro:include filename="$(find rover_description)/urdf/bot/bot.gazebo" />
+  <xacro:include filename="$(find rover_description)/urdf/bot/macros.xacro" />
   <xacro:property name="camera_link" value="0.08" /> <!-- Size of square 'camera' box -->
   <xacro:property name="scale" value="2" />
     

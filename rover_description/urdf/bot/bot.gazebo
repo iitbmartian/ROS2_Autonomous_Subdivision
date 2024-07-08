@@ -1,6 +1,5 @@
-// Changes done here are mostly the tags given. multiple words in tags were written with Camel case, in ROS2 they are separated with an underscore. Those changes were done for all tags where there was a plugin. Also some plugin filenames had to be changed like differential drive, head hokuyu controller, camera, imu, gps controller
 <?xml version="1.0" ?>
-
+<!-- working file -->
 <robot>
   <gazebo reference="link_chassis">
     <material>Gazebo/Orange</material>
