@@ -1,0 +1,17 @@
+- ros_topic_name: "cmd_vel"
+  ros_type_name: "geometry_msgs/msg/Twist"
+  ign_type_name: "ignition.msgs.Twist"
+
+- ros_topic_name: "imu"
+  ros_type_name: "sensor_msgs/msg/Imu"
+  ign_type_name: "ignition.msgs.IMU"
+
+- ros_topic_name: "lidar"
+  ros_type_name: "sensor_msgs/msg/LaserScan"
+  ign_type_name: "ignition.msgs.LaserScan"
+
+- ros_topic_name: "lidar/points"
+  ros_type_name: "sensor_msgs/msg/PointCloud2"
+  ign_type_name: "ignition.msgs.PointCloudPacked"
+  
+  # TODO: odom, tf, rgbd cam x 5 

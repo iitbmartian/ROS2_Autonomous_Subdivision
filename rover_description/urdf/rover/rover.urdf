@@ -37,7 +37,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/base_link.STL" />
+            filename="$(find rover_description)/meshes/base_link.STL" />
       </geometry>
       <material
         name="">
@@ -51,7 +51,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/base_link.STL" />
+          filename="$(find rover_description)/meshes/base_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -196,7 +196,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/Left_rocker.STL" />
+          filename="$(find rover_description)/meshes/Left_rocker.STL" />
       </geometry>
       <material
         name="">
@@ -210,13 +210,13 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/Left_rocker.STL" />
+          filename="$(find rover_description)/meshes/Left_rocker.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="joint1"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="0.29675 -0.78912 0.33409"
       rpy="1.5708 -0.06648 0" />
@@ -249,7 +249,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/wheel_4.STL" />
+          filename="$(find rover_description)/meshes/wheel_4.STL" />
       </geometry>
       <material
         name="">
@@ -263,7 +263,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/wheel_4.STL" />
+          filename="$(find rover_description)/meshes/wheel_4.STL" />
       </geometry>
       <surface>
         <friction>
@@ -312,7 +312,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/Left_bogie.STL" />
+          filename="$(find rover_description)/meshes/Left_bogie.STL" />
       </geometry>
       <material
         name="">
@@ -326,7 +326,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/Left_bogie.STL" />
+          filename="$(find rover_description)/meshes/Left_bogie.STL" />
       </geometry>
     </collision>
   </link>
@@ -370,7 +370,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/wheel_5.STL" />
+          filename="$(find rover_description)/meshes/wheel_5.STL" />
       </geometry>
       <material
         name="">
@@ -384,7 +384,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/wheel_5.STL" />
+          filename="$(find rover_description)/meshes/wheel_5.STL" />
       </geometry>
       <surface>
         <friction>
@@ -433,7 +433,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/wheel_5.STL" />
+          filename="$(find rover_description)/meshes/wheel_5.STL" />
       </geometry>
       <material
         name="">
@@ -447,7 +447,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/wheel_5.STL" />
+          filename="$(find rover_description)/meshes/wheel_5.STL" />
       </geometry>
       <surface>
         <friction>
@@ -496,7 +496,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/ball-left-down0.STL" />
+          filename="package://rover_description/$(find rover_description)/meshes/ball-left-down0.STL" />
       </geometry>
       <material
         name="">
@@ -510,7 +510,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/ball-left-down0.STL" />
+          filename="package://rover_description/$(find rover_description)/meshes/ball-left-down0.STL" />
       </geometry>
     </collision>
   </link> -->
@@ -550,7 +550,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/Right_rocker.STL" />
+          filename="$(find rover_description)/meshes/Right_rocker.STL" />
       </geometry>
       <material
         name="">
@@ -564,13 +564,13 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/Right_rocker.STL" />
+          filename="$(find rover_description)/meshes/Right_rocker.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="joint2"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="0.29675 -0.079119 0.33409"
       rpy="1.5708 0 0" />
@@ -603,7 +603,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/wheel_1.STL" />
+          filename="$(find rover_description)/meshes/wheel_1.STL" />
       </geometry>
       <material
         name="">
@@ -617,7 +617,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/wheel_1.STL" />
+          filename="$(find rover_description)/meshes/wheel_1.STL" />
       </geometry>
       <surface>
         <friction>
@@ -666,7 +666,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/Right_bogie.STL" />
+          filename="$(find rover_description)/meshes/Right_bogie.STL" />
       </geometry>
       <material
         name="">
@@ -680,7 +680,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/Right_bogie.STL" />
+          filename="$(find rover_description)/meshes/Right_bogie.STL" />
       </geometry>
     </collision>
   </link>
@@ -724,7 +724,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/wheel_2.STL" />
+          filename="$(find rover_description)/meshes/wheel_2.STL" />
       </geometry>
       <material
         name="">
@@ -738,7 +738,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/wheel_2.STL" />
+          filename="$(find rover_description)/meshes/wheel_2.STL" />
       </geometry>
       <surface>
         <friction>
@@ -787,7 +787,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/wheel_3.STL" />
+          filename="$(find rover_description)/meshes/wheel_3.STL" />
       </geometry>
       <material
         name="">
@@ -801,7 +801,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/wheel_3.STL" />
+          filename="$(find rover_description)/meshes/wheel_3.STL" />
       </geometry>
       <surface>
         <friction>
@@ -850,7 +850,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/ball-right-down0.STL" />
+          filename="package://rover_description/$(find rover_description)/meshes/ball-right-down0.STL" />
       </geometry>
       <material
         name="">
@@ -864,7 +864,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/ball-right-down0.STL" />
+          filename="package://rover_description/$(find rover_description)/meshes/ball-right-down0.STL" />
       </geometry>
     </collision>
   </link> -->
@@ -904,7 +904,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/connector-link-1.STL" />
+          filename="$(find rover_description)/meshes/connector-link-1.STL" />
       </geometry>
       <material
         name="">
@@ -918,7 +918,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/connector-link-1.STL" />
+          filename="$(find rover_description)/meshes/connector-link-1.STL" />
       </geometry>
     </collision>
   </link>
@@ -957,7 +957,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/triangle-left.STL" />
+          filename="$(find rover_description)/meshes/triangle-left.STL" />
       </geometry>
       <material
         name="">
@@ -971,13 +971,13 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/triangle-left.STL" />
+          filename="$(find rover_description)/meshes/triangle-left.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="s-joint-left"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="0.038 0 0"
       rpy="1.5708 -1.5513 -1.5708" />
@@ -1015,7 +1015,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/triangle-connector-l.STL" />
+          filename="$(find rover_description)/meshes/triangle-connector-l.STL" />
       </geometry>
       <material
         name="">
@@ -1029,13 +1029,13 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/triangle-connector-l.STL" />
+          filename="$(find rover_description)/meshes/triangle-connector-l.STL" />
       </geometry>
     </collision>
   </link><!-- -0.04999 -0.1116 -0.01 -->
   <joint
     name="s-joint-left-down"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="0.0 -0.1116 -0.01"
       rpy="3.1416 0 -3.1221" />
@@ -1080,7 +1080,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/triangle-ball-left.STL" />
+          filename="$(find rover_description)/meshes/triangle-ball-left.STL" />
       </geometry>
       <material
         name="">
@@ -1094,7 +1094,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/triangle-ball-left.STL" />
+          filename="$(find rover_description)/meshes/triangle-ball-left.STL" />
       </geometry>
     </collision>
   </link>
@@ -1133,7 +1133,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/socket-left.STL" />
+          filename="$(find rover_description)/meshes/socket-left.STL" />
       </geometry>
       <material
         name="">
@@ -1147,13 +1147,13 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/socket-left.STL" />
+          filename="$(find rover_description)/meshes/socket-left.STL" />
       </geometry>
     </collision>
   </link>
   <joint 
     name="ball-socket-left"
-    type="floating">
+    type="fixed">
     <origin
       xyz="0 0 0"
       rpy="-0.89006 1.4692 -0.17888" />
@@ -1164,47 +1164,47 @@
     <axis
       xyz="0 0.707 0.707" />
   </joint>
-  <gazebo>
-        <joint name="ball-socket-left" type="ball">
-            <parent>triangle-ball-left</parent>
-            <child>socket-left</child>
-            <pose>0 0 0 -0.89006 1.4692 -0.17888</pose>
-            <axis>
-                <xyz>1 0 0</xyz>
-                <limit>
-                    <lower>-3</lower>
-                    <upper>3</upper>
-                </limit>
-                <dynamics>
-                    <spring_reference>0</spring_reference>
-                    <spring_stiffness>0</spring_stiffness>
-                </dynamics>
-                <use_parent_model_frame>1</use_parent_model_frame>
-            </axis>
-            <axis2>
-                <xyz>0 1 0</xyz>
-                <limit>
-                    <lower>-1</lower>
-                    <upper>1</upper>
-                </limit>
-                <dynamics>
-                    <spring_reference>0</spring_reference>
-                    <spring_stiffness>0</spring_stiffness>
-                </dynamics>
-                <use_parent_model_frame>1</use_parent_model_frame>
-            </axis2>
-            <physics>
-                <ode>
-                    <implicit_spring_damper>1</implicit_spring_damper>
-                    <cfm_damping>1</cfm_damping>
-                    <limit>
-                        <cfm>0</cfm>
-                        <erp>0.2</erp>
-                    </limit>
-                </ode>
-            </physics>
-        </joint>
-    </gazebo>
+  <!-- <gazebo> -->
+  <!--       <joint name="ball-socket-left" type="ball"> -->
+  <!--           <parent>triangle-ball-left</parent> -->
+  <!--           <child>socket-left</child> -->
+  <!--           <pose>0 0 0 -0.89006 1.4692 -0.17888</pose> -->
+  <!--           <axis> -->
+  <!--               <xyz>1 0 0</xyz> -->
+  <!--               <limit> -->
+  <!--                   <lower>-3</lower> -->
+  <!--                   <upper>3</upper> -->
+  <!--               </limit> -->
+  <!--               <dynamics> -->
+  <!--                   <spring_reference>0</spring_reference> -->
+  <!--                   <spring_stiffness>0</spring_stiffness> -->
+  <!--               </dynamics> -->
+  <!--               <use_parent_model_frame>1</use_parent_model_frame> -->
+  <!--           </axis> -->
+  <!--           <axis2> -->
+  <!--               <xyz>0 1 0</xyz> -->
+  <!--               <limit> -->
+  <!--                   <lower>-1</lower> -->
+  <!--                   <upper>1</upper> -->
+  <!--               </limit> -->
+  <!--               <dynamics> -->
+  <!--                   <spring_reference>0</spring_reference> -->
+  <!--                   <spring_stiffness>0</spring_stiffness> -->
+  <!--               </dynamics> -->
+  <!--               <use_parent_model_frame>1</use_parent_model_frame> -->
+  <!--           </axis2> -->
+  <!--           <physics> -->
+  <!--               <ode> -->
+  <!--                   <implicit_spring_damper>1</implicit_spring_damper> -->
+  <!--                   <cfm_damping>1</cfm_damping> -->
+  <!--                   <limit> -->
+  <!--                       <cfm>0</cfm> -->
+  <!--                       <erp>0.2</erp> -->
+  <!--                   </limit> -->
+  <!--               </ode> -->
+  <!--           </physics> -->
+  <!--       </joint> -->
+  <!--   </gazebo> -->
 
   <link
     name="left-rod">
@@ -1228,7 +1228,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/left-rod.STL" />
+          filename="$(find rover_description)/meshes/left-rod.STL" />
       </geometry>
       <material
         name="">
@@ -1242,7 +1242,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/left-rod.STL" />
+          filename="$(find rover_description)/meshes/left-rod.STL" />
       </geometry>
     </collision>
   </link>
@@ -1281,7 +1281,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/socket-left-down.STL" />
+          filename="$(find rover_description)/meshes/socket-left-down.STL" />
       </geometry>
       <material
         name="">
@@ -1295,7 +1295,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/socket-left-down.STL" />
+          filename="$(find rover_description)/meshes/socket-left-down.STL" />
       </geometry>
     </collision>
   </link>
@@ -1334,7 +1334,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/ball-left-down.STL" />
+          filename="$(find rover_description)/meshes/ball-left-down.STL" />
       </geometry>
       <material
         name="">
@@ -1348,7 +1348,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/ball-left-down.STL" />
+          filename="$(find rover_description)/meshes/ball-left-down.STL" />
       </geometry>
     </collision>
   </link>
@@ -1366,49 +1366,49 @@
       xyz="0 1 0" /> -->
       <!-- user-defined false axis 0.6621 0.060914 -0.74694-->
   <!-- </joint> -->
-  <gazebo>
-        <joint name="s-joint-7l" type="universal">
-            <parent>socket-left-down</parent>
-            <child>ball-left-down</child>
-            <pose>0.3162 -0.2719 -0.017 0 0 0</pose>
-            <axis>
-                <xyz>0 0 1</xyz>
-                <limit>
-                    <lower>-3</lower>
-                    <upper>3</upper>
-                </limit>
-                <dynamics>
-                    <spring_reference>0</spring_reference>
-                    <spring_stiffness>0</spring_stiffness>
-                </dynamics>
-                <use_parent_model_frame>0</use_parent_model_frame>
+  <!-- <gazebo> -->
+  <!--       <joint name="s-joint-7l" type="universal"> -->
+  <!--           <parent>socket-left-down</parent> -->
+  <!--           <child>ball-left-down</child> -->
+  <!--           <pose>0.3162 -0.2719 -0.017 0 0 0</pose> -->
+  <!--           <axis> -->
+  <!--               <xyz>0 0 1</xyz> -->
+  <!--               <limit> -->
+  <!--                   <lower>-3</lower> -->
+  <!--                   <upper>3</upper> -->
+  <!--               </limit> -->
+  <!--               <dynamics> -->
+  <!--                   <spring_reference>0</spring_reference> -->
+  <!--                   <spring_stiffness>0</spring_stiffness> -->
+  <!--               </dynamics> -->
+  <!--               <use_parent_model_frame>0</use_parent_model_frame> -->
     
-            </axis>
-            <axis2>
-                <xyz>0 1 0</xyz>
-                <limit>
-                    <lower>-1</lower>
-                    <upper>1</upper>
-                </limit>
-                <dynamics>
-                    <spring_reference>0</spring_reference>
-                    <spring_stiffness>0</spring_stiffness>
-                </dynamics>
-                <use_parent_model_frame>0</use_parent_model_frame>
+  <!--           </axis> -->
+  <!--           <axis2> -->
+  <!--               <xyz>0 1 0</xyz> -->
+  <!--               <limit> -->
+  <!--                   <lower>-1</lower> -->
+  <!--                   <upper>1</upper> -->
+  <!--               </limit> -->
+  <!--               <dynamics> -->
+  <!--                   <spring_reference>0</spring_reference> -->
+  <!--                   <spring_stiffness>0</spring_stiffness> -->
+  <!--               </dynamics> -->
+  <!--               <use_parent_model_frame>0</use_parent_model_frame> -->
     
-            </axis2>
-            <physics>
-                <ode>
-                    <implicit_spring_damper>1</implicit_spring_damper>
-                    <cfm_damping>1</cfm_damping>
-                    <limit>
-                        <cfm>0</cfm>
-                        <erp>0.2</erp>
-                    </limit>
-                </ode>
-            </physics>
-        </joint>
-    </gazebo>
+  <!--           </axis2> -->
+  <!--           <physics> -->
+  <!--               <ode> -->
+  <!--                   <implicit_spring_damper>1</implicit_spring_damper> -->
+  <!--                   <cfm_damping>1</cfm_damping> -->
+  <!--                   <limit> -->
+  <!--                       <cfm>0</cfm> -->
+  <!--                       <erp>0.2</erp> -->
+  <!--                   </limit> -->
+  <!--               </ode> -->
+  <!--           </physics> -->
+  <!--       </joint> -->
+  <!--   </gazebo> -->
   <link
     name="connector-link-2">
     <inertial><!-- "0.0190878780714503 0 0" -->
@@ -1431,7 +1431,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/connector-link-2.STL" />
+          filename="$(find rover_description)/meshes/connector-link-2.STL" />
       </geometry>
       <material
         name="">
@@ -1445,7 +1445,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/connector-link-2.STL" />
+          filename="$(find rover_description)/meshes/connector-link-2.STL" />
       </geometry>
     </collision>
   </link>
@@ -1484,7 +1484,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/triangle-right.STL" />
+          filename="$(find rover_description)/meshes/triangle-right.STL" />
       </geometry>
       <material
         name="">
@@ -1498,13 +1498,13 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/triangle-right.STL" />
+          filename="$(find rover_description)/meshes/triangle-right.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="s-joint-right"
-    type="revolute"><!-- "-0.29875 -0.34231 -0.347" -->
+    type="fixed"><!-- "-0.29875 -0.34231 -0.347" -->
     <origin
       xyz="0.038 0 0"
       rpy="1.5708 1.5513 1.5708" />
@@ -1542,7 +1542,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/triangle-connector-l.STL" />
+          filename="package://rover_description/$(find rover_description)/meshes/triangle-connector-l.STL" />
       </geometry>
       <material
         name="">
@@ -1556,7 +1556,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/triangle-connector-l.STL" />
+          filename="package://rover_description/$(find rover_description)/meshes/triangle-connector-l.STL" />
       </geometry>
     </collision>
   </link> --><!-- -0.39024 0.23936 0.34675 -->
@@ -1579,36 +1579,36 @@
       velocity="1" />
   </joint> -->
 
-  <gazebo>
-        <joint name="s-joint-right-down" type="revolute">
-            <parent>triangle-right</parent>
-            <child>triangle-connector</child>
-            <pose>0.1 0.0 0.01 3.1416 0 -3.1221</pose>
-            <axis>
-                <xyz>1 0 0</xyz>
-                <limit>
-                    <lower>-30</lower>
-                    <upper>30</upper>
-                </limit>
-                <dynamics>
-                    <spring_reference>0</spring_reference>
-                    <spring_stiffness>0</spring_stiffness>
-                </dynamics>
-                <use_parent_model_frame>1</use_parent_model_frame>
+  <!-- <gazebo> -->
+  <!--       <joint name="s-joint-right-down" type="revolute"> -->
+  <!--           <parent>triangle-right</parent> -->
+  <!--           <child>triangle-connector</child> -->
+  <!--           <pose>0.1 0.0 0.01 3.1416 0 -3.1221</pose> -->
+  <!--           <axis> -->
+  <!--               <xyz>1 0 0</xyz> -->
+  <!--               <limit> -->
+  <!--                   <lower>-30</lower> -->
+  <!--                   <upper>30</upper> -->
+  <!--               </limit> -->
+  <!--               <dynamics> -->
+  <!--                   <spring_reference>0</spring_reference> -->
+  <!--                   <spring_stiffness>0</spring_stiffness> -->
+  <!--               </dynamics> -->
+  <!--               <use_parent_model_frame>1</use_parent_model_frame> -->
     
-            </axis>
-            <physics>
-                <ode>
-                    <implicit_spring_damper>1</implicit_spring_damper>
-                    <cfm_damping>1</cfm_damping>
-                    <limit>
-                        <cfm>0</cfm>
-                        <erp>0.2</erp>
-                    </limit>
-                </ode>
-            </physics>
-        </joint>
-    </gazebo>
+  <!--           </axis> -->
+  <!--           <physics> -->
+  <!--               <ode> -->
+  <!--                   <implicit_spring_damper>1</implicit_spring_damper> -->
+  <!--                   <cfm_damping>1</cfm_damping> -->
+  <!--                   <limit> -->
+  <!--                       <cfm>0</cfm> -->
+  <!--                       <erp>0.2</erp> -->
+  <!--                   </limit> -->
+  <!--               </ode> -->
+  <!--           </physics> -->
+  <!--       </joint> -->
+  <!--   </gazebo> -->
   <link
     name="triangle-ball-right">
     <inertial>
@@ -1631,7 +1631,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/triangle-ball-right.STL" />
+          filename="$(find rover_description)/meshes/triangle-ball-right.STL" />
       </geometry>
       <material
         name="">
@@ -1645,7 +1645,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/triangle-ball-right.STL" />
+          filename="$(find rover_description)/meshes/triangle-ball-right.STL" />
       </geometry>
     </collision>
   </link>
@@ -1684,7 +1684,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/socket-right.STL" />
+          filename="$(find rover_description)/meshes/socket-right.STL" />
       </geometry>
       <material
         name="">
@@ -1698,13 +1698,13 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/socket-right.STL" />
+          filename="$(find rover_description)/meshes/socket-right.STL" />
       </geometry>
     </collision>
   </link><!-- looks good, might check again -->
   <joint
     name="ball-socket-right"
-    type="floating">
+    type="fixed">
     <origin
       xyz="0 0 0"
       rpy="-2.1439 -1.5681 2.1943" />
@@ -1715,47 +1715,47 @@
     <axis
       xyz="0 1 0" />
   </joint>
-  <gazebo>
-        <joint name="ball-socket-right" type="ball">
-            <parent>triangle-ball-right</parent>
-            <child>socket-right</child>
-            <pose>0 0 0 -2.1439 -1.5681 2.1943</pose>
-            <axis>
-                <xyz>0 1 0</xyz>
-                <limit>
-                    <lower>-3</lower>
-                    <upper>3</upper>
-                </limit>
-                <dynamics>
-                    <spring_reference>0</spring_reference>
-                    <spring_stiffness>0</spring_stiffness>
-                </dynamics>
-                <use_parent_model_frame>0</use_parent_model_frame>
-            </axis>
-            <axis2>
-                <xyz>0 0 1</xyz>
-                <limit>
-                    <lower>-1</lower>
-                    <upper>1</upper>
-                </limit>
-                <dynamics>
-                    <spring_reference>0</spring_reference>
-                    <spring_stiffness>0</spring_stiffness>
-                </dynamics>
-                <use_parent_model_frame>0</use_parent_model_frame>
-            </axis2>
-            <physics>
-                <ode>
-                    <implicit_spring_damper>1</implicit_spring_damper>
-                    <cfm_damping>1</cfm_damping>
-                    <limit>
-                        <cfm>0</cfm>
-                        <erp>0.2</erp>
-                    </limit>
-                </ode>
-            </physics>
-        </joint>
-    </gazebo>
+  <!-- <gazebo> -->
+  <!--       <joint name="ball-socket-right" type="ball"> -->
+  <!--           <parent>triangle-ball-right</parent> -->
+  <!--           <child>socket-right</child> -->
+  <!--           <pose>0 0 0 -2.1439 -1.5681 2.1943</pose> -->
+  <!--           <axis> -->
+  <!--               <xyz>0 1 0</xyz> -->
+  <!--               <limit> -->
+  <!--                   <lower>-3</lower> -->
+  <!--                   <upper>3</upper> -->
+  <!--               </limit> -->
+  <!--               <dynamics> -->
+  <!--                   <spring_reference>0</spring_reference> -->
+  <!--                   <spring_stiffness>0</spring_stiffness> -->
+  <!--               </dynamics> -->
+  <!--               <use_parent_model_frame>0</use_parent_model_frame> -->
+  <!--           </axis> -->
+  <!--           <axis2> -->
+  <!--               <xyz>0 0 1</xyz> -->
+  <!--               <limit> -->
+  <!--                   <lower>-1</lower> -->
+  <!--                   <upper>1</upper> -->
+  <!--               </limit> -->
+  <!--               <dynamics> -->
+  <!--                   <spring_reference>0</spring_reference> -->
+  <!--                   <spring_stiffness>0</spring_stiffness> -->
+  <!--               </dynamics> -->
+  <!--               <use_parent_model_frame>0</use_parent_model_frame> -->
+  <!--           </axis2> -->
+  <!--           <physics> -->
+  <!--               <ode> -->
+  <!--                   <implicit_spring_damper>1</implicit_spring_damper> -->
+  <!--                   <cfm_damping>1</cfm_damping> -->
+  <!--                   <limit> -->
+  <!--                       <cfm>0</cfm> -->
+  <!--                       <erp>0.2</erp> -->
+  <!--                   </limit> -->
+  <!--               </ode> -->
+  <!--           </physics> -->
+  <!--       </joint> -->
+  <!--   </gazebo> -->
 
   <link
     name="right-rod">
@@ -1779,7 +1779,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/right-rod.STL" />
+          filename="$(find rover_description)/meshes/right-rod.STL" />
       </geometry>
       <material
         name="">
@@ -1793,7 +1793,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/right-rod.STL" />
+          filename="$(find rover_description)/meshes/right-rod.STL" />
       </geometry>
     </collision>
   </link>
@@ -1832,7 +1832,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/socket-right-down.STL" />
+          filename="$(find rover_description)/meshes/socket-right-down.STL" />
       </geometry>
       <material
         name="">
@@ -1846,7 +1846,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/socket-right-down.STL" />
+          filename="$(find rover_description)/meshes/socket-right-down.STL" />
       </geometry>
     </collision>
   </link>
@@ -1885,7 +1885,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/ball-right-down.STL" />
+          filename="$(find rover_description)/meshes/ball-right-down.STL" />
       </geometry>
       <material
         name="">
@@ -1899,7 +1899,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_description/meshes/ball-right-down.STL" />
+          filename="$(find rover_description)/meshes/ball-right-down.STL" />
       </geometry>
     </collision>
   </link>
@@ -1917,45 +1917,45 @@
       xyz="0 0 1" /> -->
       <!-- user-defined false axis 0.6621 0.060914 -0.74694-->
   <!-- </joint> -->
-  <gazebo>
-        <joint name="s-joint-7r" type="universal">
-            <parent>socket-right-down</parent>
-            <child>ball-right-down</child>
-            <pose>0.337 -0.2425 0.2 0 0 0</pose>
-            <axis>
-                <xyz>0 0 1</xyz>
-                <limit>
-                    <lower>-3</lower>
-                    <upper>3</upper>
-                </limit>
-                <dynamics>
-                    <spring_reference>0</spring_reference>
-                    <spring_stiffness>0</spring_stiffness>
-                </dynamics>
-                <use_parent_model_frame>0</use_parent_model_frame>
-            </axis>
-            <axis2>
-                <xyz>1 0 0</xyz>
-                <limit>
-                    <lower>-1</lower>
-                    <upper>1</upper>
-                </limit>
-                <dynamics>
-                    <spring_reference>0</spring_reference>
-                    <spring_stiffness>0</spring_stiffness>
-                </dynamics>
-                <use_parent_model_frame>0</use_parent_model_frame>
-            </axis2>
-            <physics>
-                <ode>
-                    <implicit_spring_damper>1</implicit_spring_damper>
-                    <cfm_damping>1</cfm_damping>
-                    <limit>
-                        <cfm>0</cfm>
-                        <erp>0.2</erp>
-                    </limit>
-                </ode>
-            </physics>
-        </joint>
-    </gazebo>
+  <!-- <gazebo> -->
+  <!--       <joint name="s-joint-7r" type="universal"> -->
+  <!--           <parent>socket-right-down</parent> -->
+  <!--           <child>ball-right-down</child> -->
+  <!--           <pose>0.337 -0.2425 0.2 0 0 0</pose> -->
+  <!--           <axis> -->
+  <!--               <xyz>0 0 1</xyz> -->
+  <!--               <limit> -->
+  <!--                   <lower>-3</lower> -->
+  <!--                   <upper>3</upper> -->
+  <!--               </limit> -->
+  <!--               <dynamics> -->
+  <!--                   <spring_reference>0</spring_reference> -->
+  <!--                   <spring_stiffness>0</spring_stiffness> -->
+  <!--               </dynamics> -->
+  <!--               <use_parent_model_frame>0</use_parent_model_frame> -->
+  <!--           </axis> -->
+  <!--           <axis2> -->
+  <!--               <xyz>1 0 0</xyz> -->
+  <!--               <limit> -->
+  <!--                   <lower>-1</lower> -->
+  <!--                   <upper>1</upper> -->
+  <!--               </limit> -->
+  <!--               <dynamics> -->
+  <!--                   <spring_reference>0</spring_reference> -->
+  <!--                   <spring_stiffness>0</spring_stiffness> -->
+  <!--               </dynamics> -->
+  <!--               <use_parent_model_frame>0</use_parent_model_frame> -->
+  <!--           </axis2> -->
+  <!--           <physics> -->
+  <!--               <ode> -->
+  <!--                   <implicit_spring_damper>1</implicit_spring_damper> -->
+  <!--                   <cfm_damping>1</cfm_damping> -->
+  <!--                   <limit> -->
+  <!--                       <cfm>0</cfm> -->
+  <!--                       <erp>0.2</erp> -->
+  <!--                   </limit> -->
+  <!--               </ode> -->
+  <!--           </physics> -->
+  <!--       </joint> -->
+  <!--   </gazebo> -->
 </robot>
