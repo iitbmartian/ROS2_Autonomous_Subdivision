@@ -23,9 +23,9 @@ def generate_launch_description():
         DeclareLaunchArgument('separate_cam', default_value='false', description='Flag to enable/disable separate camera'),
 
         # Set intial postion of rover..
-        DeclareLaunchArgument('x', default_value='6', description='Initial x position of the rover'),
-        DeclareLaunchArgument('y', default_value='6', description='Initial y position of the rover'),
-        DeclareLaunchArgument('z', default_value='10.5', description='Initial z position of the rover'),
+        DeclareLaunchArgument('x', default_value='2', description='Initial x position of the rover'),
+        DeclareLaunchArgument('y', default_value='2', description='Initial y position of the rover'),
+        DeclareLaunchArgument('z', default_value='1.5', description='Initial z position of the rover'),
 
         # Set intial postion of camera..
         # DeclareLaunchArgument('x_cam', default_value='-0.06421885520658', description='Initial x position of the camera'),
@@ -90,11 +90,11 @@ def generate_launch_description():
                 robot_description,
                 "-name",
                 "rover",
-                "x",
+                "-x",
                 LaunchConfiguration("x"),
-                "y",
+                "-y",
                 LaunchConfiguration("y"),
-                "z",
+                "-z",
                 LaunchConfiguration("z"),
             ],
         ),
