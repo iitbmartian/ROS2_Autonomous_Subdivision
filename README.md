@@ -21,7 +21,6 @@ export GAZEBO_RESOURCE_PATH=$GAZEBO_RESOURCE_PATH:/usr/share/gazebo-11:${HOME}/m
 - Then create a pull request of your branch into the main branch  
 - When committing new code, please follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification
 ## Resources
-- [Spreadsheet of important links for learning Fortress][https://docs.google.com/spreadsheets/d/1Vd0YYC5ROk6MPMOKjW5itqq75i41R3NcYcKld-Sgi4g/edit?gid=0#gid=0]
-
+- [Spreadsheet of important links for learning Fortress](https://docs.google.com/spreadsheets/d/1Vd0YYC5ROk6MPMOKjW5itqq75i41R3NcYcKld-Sgi4g/edit?gid=0#gid=0)
 
 
