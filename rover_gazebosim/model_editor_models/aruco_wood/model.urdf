@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<robot name="aruco_wood">
+  <joint name="aruco_wood__link_1_JOINT_0_0" type="fixed">
+    <parent link="aruco_wood__link_1"/>
+    <child link="aruco_wood__link_1_clone_0"/>
+    <origin rpy="0 0 0" xyz="-0.00403  0.66526  0.19524"/>
+    <axis xyz="0 0 0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="aruco_wood__link_1_JOINT_0" type="fixed">
+    <parent link="aruco_wood__link_1"/>
+    <child link="aruco_wood__link_1_clone"/>
+    <origin rpy="0 0 0" xyz="-0.0152   0.66318  0.19526"/>
+    <axis xyz="0 0 0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <link name="aruco_wood__link_1">
+    <inertial>
+      <mass value="1.21407"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="0.00864359" ixy="0" ixz="0" iyy="0.00421539" iyz="0" izz="0.00446773"/>
+    </inertial>
+    <collision name="aruco_wood__collision">
+      <origin rpy="0 0 0" xyz="-0.02589  0.66382  0.19437"/>
+      <geometry>
+        <box size="0.013978 0.209676 0.203642"/>
+      </geometry>
+    </collision>
+    <visual name="aruco_wood__visual">
+      <origin rpy="0 0 0" xyz="-0.02589  0.66382  0.19437"/>
+      <geometry>
+        <box size="0.013978 0.209676 0.203642"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aruco_wood__link_1_clone">
+    <inertial>
+      <mass value="0.519809"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="0.00549167" ixy="0" ixz="0" iyy="0.00278045" iyz="0" izz="0.00275135"/>
+    </inertial>
+    <collision name="aruco_wood__collision">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.021523 0.251103 0.252437"/>
+      </geometry>
+    </collision>
+    <visual name="aruco_wood__visual">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.021523 0.251103 0.252437"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aruco_wood__link_1_clone_0">
+    <inertial>
+      <mass value="0.238009"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="0.00161175" ixy="0" ixz="0" iyy="0.000787067" iyz="0" izz="0.000832042"/>
+    </inertial>
+    <collision name="aruco_wood__collision">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.013624 0.204363 0.198738"/>
+      </geometry>
+    </collision>
+    <visual name="aruco_wood__visual">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.013624 0.204363 0.198738"/>
+      </geometry>
+    </visual>
+  </link>
+</robot>

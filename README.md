@@ -12,8 +12,9 @@ source install/setup.zsh
 export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:${HOME}/mrt_ws/src/rover_gazebosim/model_editor_models
 export GAZEBO_RESOURCE_PATH=$GAZEBO_RESOURCE_PATH:/usr/share/gazebo-11:${HOME}/mrt_ws/src/rover_gazebosim/media/materials
 ```
+## Packages
 - `rover_description`: URDF descriptions + RViz visualization of the rover
--  `rover_gazebosim` : Ignition Fortress simulation of the rover
+- `rover_gazebosim` : Ignition Fortress simulation of the rover
 ## Guidelines
 - Pull the changes of the main branch to your own branch and make changes
 - Then create a pull request of your branch into the main branch  
