@@ -15,11 +15,11 @@ world_file = 'living_room3.sdf'
 def generate_launch_description():
 
     pkg_gazebo_ros = get_package_share_directory('gazebo_ros')
-    pkg_radu_simulation = get_package_share_directory('rover_description')
-    rviz_config_path = os.path.join(pkg_radu_simulation, 'rviz/rover_description.rviz')
+    pkg_sim = get_package_share_directory('rover_description')
+    rviz_config_path = os.path.join(pkg_sim, 'rviz/rover_description.rviz')
 
     robot_description_path =  os.path.join(
-        pkg_radu_simulation,
+        pkg_sim,
         "urdf","rover",
         "rover.urdf",
     )
@@ -54,7 +54,7 @@ def generate_launch_description():
             executable='spawn_entity.py',
             name='urdf_spawner',
             output='screen',
-            arguments=["-topic", "/robot_description", "-entity", "rover", "-x", "-3.0", "-y", "-1.5"])
+            arguments=["-topic", "/robot_description", "-entity", "rover", "-x", "-3.0", "-y", "-1.5", "-z", "3"])
 
     print("STARTING ALL NODES")
 
@@ -67,7 +67,7 @@ def generate_launch_description():
 
     no_sim_time = DeclareLaunchArgument(
             'use_sim_time',
-            default_value='false',
+            default_value='true',
             description='Use simulation (Gazebo) clock if true')
 
     return LaunchDescription([

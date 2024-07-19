@@ -6,8 +6,12 @@ cd ..
 colcon build --symlink-install
 source install/setup.zsh
 ```
-Use [setuptools 58.2.0](https://pypi.org/project/setuptools/58.2.0/) to remove warning while building python based ROS packages
-## Packages
+- Use [setuptools 58.2.0](https://pypi.org/project/setuptools/58.2.0/) to remove warning while building python based ROS packages
+- For spawning ArUco markers and arrows in classic Gazebo, add the following lines to your bashrc (or zshrc).
+```
+export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:${HOME}/mrt_ws/src/rover_gazebosim/model_editor_models
+export GAZEBO_RESOURCE_PATH=$GAZEBO_RESOURCE_PATH:/usr/share/gazebo-11:${HOME}/mrt_ws/src/rover_gazebosim/media/materials
+```
 - `rover_description`: URDF descriptions + RViz visualization of the rover
 -  `rover_gazebosim` : Ignition Fortress simulation of the rover
 ## Guidelines
