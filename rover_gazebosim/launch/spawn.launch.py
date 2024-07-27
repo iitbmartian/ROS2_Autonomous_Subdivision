@@ -1,6 +1,6 @@
 import launch
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, SetEnvironmentVariable
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, SetEnvironmentVariable, RegisterEventHandler
 from launch.substitutions import LaunchConfiguration
 from launch.conditions import IfCondition
 from launch_ros.actions import Node
@@ -16,7 +16,7 @@ def generate_launch_description():
     robot_description = xacro.process_file(os.path.join(get_package_share_directory('rover_description'), 'urdf/rover/rover.urdf')).toxml()
     config_file = os.path.join(get_package_share_directory('rover_gazebosim'), 'config', 'parameter_bridge.yaml')
     # camera_description = xacro.process_file(os.path.join(get_package_share_directory('rover_description'), 'urdf/rover/camera.urdf')).toxml()
-
+    robot_controllers = os.path.join(get_package_share_directory("rover_wheel_control"),"config","diff_drive_controller.yaml")
     return LaunchDescription([
 
         DeclareLaunchArgument('gui', default_value='true', description='Flag to enable/disable GUI'),
@@ -25,27 +25,16 @@ def generate_launch_description():
         # Set intial postion of rover..
         DeclareLaunchArgument('x', default_value='2', description='Initial x position of the rover'),
         DeclareLaunchArgument('y', default_value='2', description='Initial y position of the rover'),
-        DeclareLaunchArgument('z', default_value='1.5', description='Initial z position of the rover'),
-
-        # Set intial postion of camera..
-        # DeclareLaunchArgument('x_cam', default_value='-0.06421885520658', description='Initial x position of the camera'),
-        # DeclareLaunchArgument('y_cam', default_value='-0.526119109974194', description='Initial y position of the camera'),
-        # DeclareLaunchArgument('z_cam', default_value='1.203679693338444', description='Initial z position of the camera'),
-
+        DeclareLaunchArgument('z', default_value='1', description='Initial z position of the rover'),
 
         # Set environment variables...
-        SetEnvironmentVariable(name='IGN_GAZEBO_RESOURCE_PATH', value=os.path.join(get_package_share_directory('rover_description'))),
-        # SetEnvironmentVariable(name='IGN_GAZEBO_RESOURCE_PATH', value=os.path.join(get_package_share_directory('rover_description'), 'meshes') + ':' + os.path.join(get_package_share_directory('rover_description'), 'urdf', 'rover')),
-        SetEnvironmentVariable(name='GZ_SIM_RESOURCE_PATH', value=os.path.join(get_package_share_directory('rover_description'))),
-        # SetEnvironmentVariable(name='GAZEBO_MODEL_DATABASE_URI', value='/'),
-        # SetEnvironmentVariable(name='GAZEBO_RESOURCE_PATH', value=os.path.join(get_package_share_directory('gazebo_envs'), 'media/materials')),
-
+        SetEnvironmentVariable(name='IGN_GAZEBO_RESOURCE_PATH', value=os.path.join(get_package_share_directory('rover_description'), 'meshes') + ':' + os.path.join(get_package_share_directory('rover_description'), 'urdf', 'rover')),
         # Include the shapes world launch file from igniton gazebo package here..
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(
                 os.path.join(get_package_share_directory("ros_gz_sim"), "launch", "gz_sim.launch.py")
                 ),
-                launch_arguments=[("gz_args", ["empty.sdf"])],
+                launch_arguments=[("gz_args", ["~/mrt_ws/src/rover_gazebosim/worlds/ign_rect_world.sdf"])],
         ),
     
         # Robot strcture publisher..
@@ -55,28 +44,12 @@ def generate_launch_description():
             output='screen',
             parameters=[{"robot_description": robot_description}]
         ),
-
-        # Camera strcture publisher..
-        # Node(
-        #     package='robot_state_publisher',
-        #     executable='robot_state_publisher',
-        #     output='screen',
-        #     parameters=[{"camera_description": camera_description}]
-        # ),
-
         # Joint State Publisher to send fake joint values..
         Node(
             package='joint_state_publisher',
             executable='joint_state_publisher',
             name='joint_state_publisher',
             parameters=[{'use_gui': LaunchConfiguration('gui')}]  
-        ),
-
-        # Combine joint values..
-        Node(
-            package='robot_state_publisher',
-            executable='robot_state_publisher',
-            name='robot_state_publisher'
         ),
 
         # Spawn the rover in gazebo..
@@ -103,26 +76,22 @@ def generate_launch_description():
               package='ros_gz_bridge',
               executable='parameter_bridge',
               parameters=[{'config_file': config_file }],
-              )
-        # Spawn the camera conditionally..
+              ),
         # Node(
-        #     condition = IfCondition(LaunchConfiguration('separate_cam')),
-        #     package="ros_gz_sim",
-        #     executable="create",
-        #     name='camera_spawn',
-        #     output='screen',
-        #     arguments = [
-        #         "-string",
-        #         camera_description,
-        #         "-name",
-        #         "camera",
-        #         "x",
-        #         LaunchConfiguration("x_cam"),
-        #         "y",
-        #         LaunchConfiguration("y_cam"),
-        #         "z",
-        #         LaunchConfiguration("z_cam"),
-        #         ],
-        #     ),
-    ])
+        # package="controller_manager",
+        # executable="ros2_control_node",
+        # parameters=[robot_controllers],
+        # output="both",
+        # ),
+        # Node(
+        # package="controller_manager",
+        # executable="spawner",
+        # arguments=["joint_state_broadcaster", "--controller-manager", "/controller_manager"],
+        # ),
+        # Node(
+        # package="controller_manager",
+        # executable="spawner",
+        # arguments=["forward_position_controller", "--controller-manager", "/controller_manager"],
+        # ),
 
+        ])

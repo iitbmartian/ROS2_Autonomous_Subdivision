@@ -4,8 +4,8 @@
   name="rover" xmlns:xacro="http://www.ros.org/wiki/xacro">
 <xacro:include filename="$(find rover_description)/urdf/rover/rover.gazebo" />
   <xacro:include filename="$(find rover_description)/urdf/materials.xacro" />
+<!-- <xacro:include filename="$(find rover_description)/urdf/rover/ros2_control.xacro" /> -->
 
-  
   <link
     name="root_link">
   </link>
@@ -87,7 +87,7 @@
   </joint>
 
   <!-- Camera -->
-  <link name="mrt/camera_link">
+  <link name="camera_link">
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -110,21 +110,21 @@
     </inertial>
   </link>
 
-  <transmission name="simple_trans">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="camera_joint">
-      <hardware_interface>hardware_interface/PositionJointInterface</hardware_interface>
-    </joint>
-    <actuator name="camera_motor">
-      <mechanical_reduction>1</mechanical_reduction>
-      <hardware_interface>hardware_interface/PositionJointInterface</hardware_interface>
-    </actuator>
-  </transmission>
+  <!-- <transmission name="simple_trans"> -->
+  <!--   <type>transmission_interface/SimpleTransmission</type> -->
+  <!--   <joint name="camera_joint"> -->
+  <!--     <hardware_interface>hardware_interface/PositionJointInterface</hardware_interface> -->
+  <!--   </joint> -->
+  <!--   <actuator name="camera_motor"> -->
+  <!--     <mechanical_reduction>1</mechanical_reduction> -->
+  <!--     <hardware_interface>hardware_interface/PositionJointInterface</hardware_interface> -->
+  <!--   </actuator> -->
+  <!-- </transmission> -->
 
-  <joint name="camera_joint" type="continuous">
+  <joint name="camera_joint" type="fixed">
     <origin xyz="-0.06421885520658 -0.526119109974194 0.703679693338444" rpy="0 0 3.1416"/>
     <parent link="base_link"/>
-    <child link="mrt/camera_link"/>
+    <child link="camera_link"/>
     <axis xyz="0 0 1"/>
     <limit effort="100" velocity="1"/>
   </joint>
@@ -135,7 +135,7 @@
     <!-- these values have to be these values otherwise the gazebo camera image
         won't be aligned properly with the frame it is supposedly originating from -->
     <origin xyz="0 0 0" rpy="${-pi/2} 0 ${-pi/2}"/>
-    <parent link="mrt/camera_link"/>
+    <parent link="camera_link"/>
     <child link="camera_link_optical"/>
   </joint>
 
@@ -1957,5 +1957,34 @@
   <!--               </ode> -->
   <!--           </physics> -->
   <!--       </joint> -->
-  <!--   </gazebo> -->
+      <!--   </gazebo> -->
+      <!-- <ros2_control name="GazeboSimSystem" type="system"> -->
+    <!-- <hardware> -->
+      <!--   <plugin>gz_ros2_control/GazeboSimSystem</plugin> -->
+    <!-- </hardware> -->
+    <!-- <joint name="wheel_1"> -->
+      <!-- <command_interface name="velocity"> -->
+      <!--   <param name="min">-1</param> -->
+      <!--   <param name="max">1</param> -->
+      <!-- </command_interface> -->
+      <!-- <state_interface name="position"/> -->
+      <!-- <state_interface name="velocity"/> -->
+    <!-- </joint> -->
+    <!-- <joint name="wheel_4"> -->
+      <!-- <command_interface name="velocity"> -->
+      <!--   <param name="min">-1</param> -->
+      <!--   <param name="max">1</param> -->
+      <!-- </command_interface> -->
+      <!-- <state_interface name="position"/> -->
+      <!-- <state_interface name="velocity"/> -->
+    <!-- </joint> -->
+  <!-- </ros2_control> -->
+
+  <!-- <gazebo> -->
+      <!-- <!-1- Joint state publisher -1-> -->
+    <!-- <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin"> -->
+      <!-- <parameters>$(find rover_wheel_control)/config/diff_drive_controller.yaml</parameters> -->
+    <!-- </plugin> -->
+  <!-- </gazebo> -->
+
 </robot>
